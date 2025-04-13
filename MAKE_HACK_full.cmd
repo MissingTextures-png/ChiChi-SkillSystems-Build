@@ -17,7 +17,7 @@ set "target_sym=%~dp0SkillsTest.sym"
 @rem defining tools
 
 set "c2ea=%~dp0Tools\C2EA\c2ea"
-set "textprocess=%~dp0Tools\TextProcess\text-process-classic"
+set "textprocess=%~dp0Tools\TextProcess\text-process-classic.exe"
 set "ups=%~dp0Tools\ups\ups"
 set "parsefile=%~dp0EventAssembler\Tools\ParseFileUTF8.exe"
 set "tmx2ea=%~dp0Tools\tmx2ea\tmx2ea"
@@ -45,6 +45,8 @@ if /I not [%1]==[quick] (
 
   echo:
   echo Processing text
+  echo %base_dir%
+  echo %base_dir%Text
 
   cd "%base_dir%Text"
   echo: | ("%textprocess%" text_buildfile.txt --parser-exe "%parsefile%" --installer "InstallTextData.event" --definitions "TextDefinitions.event")
